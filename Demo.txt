@@ -1,0 +1,11 @@
+create Database Demo
+go
+
+use Demo
+go
+
+create table Selectone(
+idselect int identity(1,1) primary key,
+Lenguajes varchar(20),
+)
+go
