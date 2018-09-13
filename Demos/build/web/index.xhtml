@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title> </title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p:selectOneMenu value="#{selectoneC.selectone.idselect}" id="AcAul" >
+                <f:selectItem itemLabel="Selecionar" noSelectionOption="true"/>
+                <f:selectItems value="#{selectoneC.listlenguaje}" var="txtsele" itemLabel="#{txtsele.lenguajes}"/>
+            </p:selectOneMenu> 
+        </h:form>
+        <h:form>
+            <p:selectManyButton value="#{selectoneC.selctMany}">
+                <f:selectItems  value="#{selectoneC.listlenguaje}" var="txtsele" itemLabel="#{txtsele.lenguajes}" itemValue="#{txtsele.lenguajes}"/>
+            </p:selectManyButton>
+            <p:commandButton value="Submit" icon="ui-icon-check" update="display"/>
+            <p:spacer/>
+            <p:dataList id ="display" value="#{selectoneC.selctMany}" var="demo">
+                <p:outputLabel value="#{demo}" /> 
+            </p:dataList>
+        </h:form>
+    </h:body>
+</html>
+
